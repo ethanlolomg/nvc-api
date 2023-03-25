@@ -1,7 +1,8 @@
 from flask import Flask, session, request, jsonify, make_response
 import openai
+import os
 
-openai.api_key = "<API KEY>"
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 app = Flask(__name__)
 app.config.update(ENV='development')

@@ -40,4 +40,4 @@ def post():
     else:
         return jsonify(__default_message(message="wrong payload"), 400)
 
-app.run(host="127.0.0.1", port=8085, debug=True)
+# app.run(host="127.0.0.1", port=8085, debug=True)

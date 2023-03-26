@@ -1,4 +1,4 @@
-from flask import Flask, session, request, jsonify, make_response
+from flask import Flask, session, request, jsonify, render_template
 import openai
 import os
 
@@ -22,6 +22,10 @@ def __default_message(message:str):
     print(result)
     return {"translation": result["choices"][0]["text"]}
 
+
+@app.route('/')
+def home():
+   return render_template("index.html")
 
 @app.route("/translate", methods=["GET"])
 def get():

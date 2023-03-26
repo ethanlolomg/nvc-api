@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NVC Translator</title>
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/1a48924413.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- nav -->
+
+    <nav class="navigation container">
+        <div class="nav-brand">NVC Translator</div>
+        <ul class="list-non-bullet nav-pills">
+            <li class="list-item-inline">
+                <a class="link link-active" href="/">home</a>
+            </li>
+            <li class="list-item-inline">
+                <a class="link" href="https://github.com/ethanlolomg/nvc-api">github</a>
+            </li>
+            <li class="list-item-inline">
+                <span id="toggleknop" onclick="changeTheme()"><i class="fas fa-moon" id="zon"
+                        style="color:#737eac;"></i></span>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- translator -->
+
+    <div class="container container-center">
+        <header class="hero">
+            <img class="hero-img" src="{{ url_for('static', filename='giraffe.png') }}" />
+            <h1 class="hero-heading">NVC <span class="heading-inverted"> Translator</span></h1>
+        </header>
+
+        <div class="justify">
+            <textarea id="input-translate" placeholder="Enter your text to translate"></textarea>
+        </div>
+        <button class="link link-primary" id="btn-translate">Translate</button>
+        <div id="output-translate">Output of the translation</div>
+    </div>
+
+    <!-- footer -->
+
+    <footer class="footer">
+        <div class="footer-header">Connect with me on</div>
+        <ul class="social-links list-non-bullet">
+            <li class="list-item-inline">
+                <a class="link" href="https://github.com/ethanlolomg/nvc-api">
+                    Github
+                </a>
+            </li>
+        </ul>
+    </footer>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+
+</html>

@@ -33,7 +33,7 @@ def get():
     text = request.args.get("text")
     response = jsonify(__default_message(text), 200)
     response.headers.add('Access-Control-Allow-Origin', '*')
-    return response
+    return response # For some reason the response comes back with leading \n's; trimming in js for now
 
 
 @app.route("/post", methods=["POST"])
@@ -47,4 +47,4 @@ def post():
     else:
         return jsonify(__default_message(message="wrong payload"), 400)
 
-# app.run(host="127.0.0.1", port=5001, debug=True)
+# app.run(host="127.0.0.1", port=5001, debug=True) # uncomment to run locally #runningLocally #ref

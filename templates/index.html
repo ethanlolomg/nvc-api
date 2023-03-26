@@ -22,13 +22,19 @@
     <!-- nav -->
 
     <nav class="navigation container">
-        <div class="nav-brand">NVC Translator</div>
+        <div class="nav-brand">NVC Translator  –         
+            <span style="font-size: .8em;font-style: italic;">Translate any text to NVC, Marshall Rosenberg's 
+                
+                <a style="color: inherit;" target="_blank" href="https://www.youtube.com/watch?app=desktop&v=Xov5z_GJ9Zs">Nonviolent Communication</a> 
+                (<a style="color: inherit;" target="_blank" href="https://www.amazon.com/Nonviolent-Communication-Language-Life-Changing-Relationships/dp/189200528X">more</a>)
+                </span>
+    </div>
         <ul class="list-non-bullet nav-pills">
             <li class="list-item-inline">
-                <a class="link link-active" href="/">home</a>
+                <a class="link link-active"  href="/">home</a>
             </li>
             <li class="list-item-inline">
-                <a class="link" href="https://github.com/ethanlolomg/nvc-api">github</a>
+                <a class="link" target="_blank" href="https://github.com/ethanlolomg/nvc-api">github</a>
             </li>
             <li class="list-item-inline">
                 <span id="toggleknop" onclick="changeTheme()"><i class="fas fa-moon" id="zon"
@@ -46,7 +52,7 @@
         </header>
 
         <div class="justify">
-            <textarea id="input-translate" placeholder="Enter your text to translate"></textarea>
+            <textarea id="input-translate" placeholder="Enter your text to translate, e.g. “You never text me and I feel abandoned”"></textarea>
         </div>
         <button class="link link-primary" id="btn-translate">Translate</button>
         <div id="output-translate">Output of the translation</div>

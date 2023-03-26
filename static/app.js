@@ -22,7 +22,7 @@ function callback() {
         .then(json => {
             console.log("json: ", json)
             var output_text = json[0].translation;
-            output_translate.innerText = output_text;
+            output_translate.innerText = output_text.trim(); // For some reason the response comes back with leading \n's
         }).catch(function errorhandler(error) {
     alert("Something wrong with the server. Please try again later.")
 })

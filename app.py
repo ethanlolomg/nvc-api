@@ -11,13 +11,13 @@ app.config.update(SECRET_KEY='878as7d8f7997dfaewrwv8asdf8)(dS&A&*d78(*&ASD08A')
 SESSION_KEY = "json"
 
 def __default_message(message:str):
-    new_prompt = "Rephrase in NVC: " + message
+    new_prompt = "Rephrase in NVC language " + message
 
     result = openai.Completion.create(
-        model="text-davinci-003",
+        model="gpt-4-32k",
         prompt=new_prompt,
-        max_tokens=256,
-        temperature=0
+        max_tokens=32768,
+        temperature=1.2
     )
     print(result)
     return {"translation": result["choices"][0]["text"]}

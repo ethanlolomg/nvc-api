@@ -27,7 +27,9 @@ def __default_message(message:str):
 def get():
     # get = session.get(SESSION_KEY)
     text = request.args.get("text")
-    return jsonify(__default_message(text), 200)
+    response = jsonify(__default_message(text), 200)
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 
 @app.route("/post", methods=["POST"])

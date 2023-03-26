@@ -23,10 +23,11 @@ def __default_message(message:str):
     return {"translation": result["choices"][0]["text"]}
 
 
-@app.route("/get", methods=["GET"])
+@app.route("/translate", methods=["GET"])
 def get():
-    get = session.get(SESSION_KEY)
-    return make_response(jsonify(get), 200)
+    # get = session.get(SESSION_KEY)
+    text = request.args.get("text")
+    return jsonify(__default_message(text), 200)
 
 
 @app.route("/post", methods=["POST"])
@@ -40,4 +41,4 @@ def post():
     else:
         return jsonify(__default_message(message="wrong payload"), 400)
 
-# app.run(host="127.0.0.1", port=8085, debug=True)
+# app.run(host="127.0.0.1", port=5001, debug=True)

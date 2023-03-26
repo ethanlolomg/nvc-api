@@ -7,7 +7,7 @@ var output_translate = document.querySelector("#output-translate")
 
 
 // actual server
-var url = "https://nvc-api.herokuapp.com/translate"
+var url = "translate"
 
 function urlfunc(url) {
     return url + "?" + "text=" + input_translate.value

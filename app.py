@@ -14,9 +14,9 @@ def __default_message(message:str):
     new_prompt = "Rephrase in NVC language " + message
 
     result = openai.Completion.create(
-        model="gpt-4-32k",
+        model="text-davinci-003",
         prompt=new_prompt,
-        max_tokens=32768,
+        max_tokens=3000,
         temperature=1.2
     )
     print(result)

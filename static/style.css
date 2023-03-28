@@ -68,7 +68,7 @@ textarea {
 #output-translate {
     border: 1px solid var(--primary-color);
     display: block;
-    height: 10vh;
+    min-height: 10vh;
     margin: 1rem;
     padding: 1rem;
     /* font-family: monospace; */

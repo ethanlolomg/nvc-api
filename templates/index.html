@@ -1,6 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- <style>
+    .spinner {
+        margin: 100px auto;
+        width: 40px;
+        height: 40px;
+        position: relative;
+    }
+
+    .spinner::before {
+        content: "";
+        box-sizing: border-box;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: #7367f0;
+        animation: spinner 1s linear infinite;
+        border: 3px solid #7367f0;
+        border-top-color: transparent;
+    }
+
+    @keyframes spinner {
+        0% {
+            transform: rotate(0);
+        }
+        100% {
+            transform: rotate(1turn);
+        }
+    }
+</style> -->
+
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MD6L3WYG0S"></script>
@@ -62,8 +93,18 @@
             <textarea id="input-translate" placeholder="Enter text you want to translate, e.g. “You never text me and I feel abandoned.”"></textarea>
             <!-- <textarea id="input-translate" placeholder="Enter a text you've received, or a text you're thinking to send, that you want to translate, e.g. “You never call me and I feel abandoned”"></textarea> -->
         </div>
-        <button class="link link-primary" id="btn-translate">Translate</button>
-        <div id="output-translate" contenteditable="true" placeholder="Output of the translation"></div>
+
+        <!-- <button class="link link-primary" id="btn-translate">Translate</button> -->
+
+        <!-- <button class="link link-primary" id="btn-translate">Translate</button>
+        <div id="loading" class="spinner" style="display: none;"></div> -->
+
+        <div class="spinner-container">
+            <button class="link link-primary" id="btn-translate">Translate</button>
+            <div id="loading" class="spinner" style="display: none;"></div>
+        </div>
+
+        <div id="output-translate">Output of the translation</div>
     </div>
 
     <!-- footer -->

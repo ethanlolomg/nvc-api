@@ -1,6 +1,7 @@
 var translate = document.querySelector("#btn-translate");
 var input_translate = document.querySelector("#input-translate")
 var output_translate = document.querySelector("#output-translate")
+var loading = document.querySelector("#loading");
 
 // mock server
 // var url = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json"
@@ -14,6 +15,11 @@ function urlfunc(url) {
 }
 
 function callback() {
+    // Show spinner
+    loading.style.display = 'block';
+    // Hide translate button
+    translate.style.display = 'none';
+
     fetch(urlfunc(url), {
         method: 'GET',
         mode: 'cors',
@@ -22,10 +28,22 @@ function callback() {
         .then(json => {
             console.log("json: ", json)
             var output_text = json[0].translation;
+            
             output_translate.innerText = output_text.trim(); // For some reason the response comes back with leading \n's
+
+            // Hide spinner
+            loading.style.display = 'none';
+            // Show translate button
+            translate.style.display = 'block';
+
         }).catch(function errorhandler(error) {
-    alert("Something wrong with the server. Please try again later.")
-})
+            // Hide spinner
+            loading.style.display = 'none';
+            // Show translate button
+            translate.style.display = 'block';
+
+            alert("Something wrong with the server. Please try again later.")
+        })
 }
 
 translate.addEventListener("click", callback)
